@@ -1,6 +1,6 @@
 package te.core.env;
 
-import java.util.Set;
+import java.util.Collection;
 
 /**
  * A {@link PropertyReader} impl. whose keys come from the system's properties.
@@ -8,7 +8,7 @@ import java.util.Set;
 public class SystemPropertyReader implements PropertyReader {
 
     @Override
-    public Set<String> getPropertyKeys() {
+    public Collection<String> getPropertyKeys() {
         return System.getProperties().stringPropertyNames();
     }
 
