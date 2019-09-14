@@ -1,0 +1,32 @@
+apply plugin: 'java-library'
+apply plugin: 'groovy'
+
+apply from: 'add-integration-tests.gradle'
+apply from: 'add-versions-plugin.gradle'
+apply from: 'add-source-artifacts.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Making Java a little more functional
+    api 'io.vavr:vavr:0.10.2'
+
+    // Logging
+    api 'org.slf4j:slf4j-api:1.7.28'
+
+    // Utils
+    api 'commons-io:commons-io:2.6'
+    api 'org.apache.commons:commons-lang3:3.9'
+    api 'com.google.guava:guava:28.1-jre'
+    api 'org.apache.commons:commons-collections4:4.4'
+
+    // Annotations
+    api 'net.jcip:jcip-annotations:1.0'
+    api 'com.intellij:annotations:12.0'
+
+    testImplementation 'cglib:cglib-nodep:3.3.0'
+    testImplementation 'org.objenesis:objenesis:3.0.1'
+    testImplementation 'org.spockframework:spock-core:1.3-groovy-2.5'
+}
